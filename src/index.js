@@ -1,7 +1,7 @@
 import 'core-js/fn/object/assign';
-import React, { Component } from 'react';
+import React, { Component, isValidElement } from 'react';
 import ReactDOM from 'react-dom';
-import AppBar from './components/Main';
+// import AppBar from './components/Main';
 
 // class Button extends Component {
 //   static contextTypes = {
@@ -61,4 +61,30 @@ import AppBar from './components/Main';
 
 // ReactDOM.render(<MessageList messages={messages} />, document.getElementById('app'));
 // Render the main component into the dom
-ReactDOM.render(<AppBar />, document.getElementById('app'));
+
+class Test extends Component {
+  state = {
+    name: 'jina'
+  };
+
+  handleClick() {
+    this.setState({
+      name: 'gina',
+    });
+
+    console.log(this.state.name);
+  }
+  
+  render() {
+    
+    return (
+      <div>
+        <button onClick={this.handleClick.bind(this)}>设置名字</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Test></Test>, document.getElementById('app'));
+
+

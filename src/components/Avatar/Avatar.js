@@ -69,12 +69,12 @@ class Avatar extends Component {
     } = this.props;
     
     const styles = getStyles(this.props, this.context);
-    const {preparseStyles} = this.context.muiTheme;
+    const {prepareStyles} = this.context.muiTheme;
 
     if (src) {
       return (
         <img
-          style={preparseStyles(Object.assign(styles.root, style))}
+          style={prepareStyles(Object.assign(styles.root, style))}
           src={src}
           className={className}
           {...other}
